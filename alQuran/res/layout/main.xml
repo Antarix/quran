@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        style="@style/TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@id/id_SurahEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:gravity="top"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@id/id_SurahArabic"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:layout_marginTop="2dp"
+            android:gravity="bottom"
+            android:textSize="12dp"/>
+        
+    </LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginBottom="35dip"
+	    android:layout_marginTop="@dimen/padding_home_top"
+	    android:orientation="vertical" >
+
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_vertical"
+		    android:background="@drawable/juzheader"
+		    android:orientation="vertical"
+		    android:layout_marginBottom="5dp" >
+
+			<TextView
+			    android:id="@id/id_JuzNo"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center"
+			    android:textSize="20dp"/>
+
+		</LinearLayout>
+
+		<ListView
+		    android:id="@+id/listView1"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_gravity="right"
+		    android:background="@color/background1"
+		    android:cacheColorHint="@android:color/transparent"
+		    android:divider="@color/Grey"
+		    android:dividerHeight="1dip" >
+			
+		</ListView>
+    
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+	android:id="@id/popupMenu"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:gravity="center_vertical"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="40dp"
+    android:background="@drawable/popup_menu_background" >
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:layout_marginLeft="20dp"
+        android:contentDescription="@string/hello_world"
+        android:onClick="bookMarkWithDialog"
+        android:src="@drawable/add"
+        android:background="@drawable/button_selector" />
+
+    <ImageButton
+        android:id="@+id/btn_recite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_marginLeft="20dp"
+        android:onClick="reciteAayat"
+        android:contentDescription="@string/hello_world"
+        android:src="@drawable/reciteverse" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/hello_world"
+        android:src="@drawable/tafsir" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/hello_world"
+        android:src="@drawable/maileverse" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/hello_world"
+        android:src="@drawable/compare" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/hello_world"
+        android:onClick="closePopupMenu"
+        android:src="@drawable/closetoolbar" />
+
+</LinearLayout>
+	
+	
+	<RelativeLayout android:layout_width="fill_parent"
+	android:id="@id/mediaPlayer"
+    android:layout_height="fill_parent"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="40dp"
+    android:background="@android:color/transparent"
+    android:gravity="bottom" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/floating_background"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp" >
+
+            <TextView
+                android:id="@id/id_SurahEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/playerTitle"
+                android:textColor="@color/Grey"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp" >
+
+            <ListView
+                android:id="@id/id_SurahList"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@color/background2"
+                android:dividerHeight="1dip" >
+
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@id/current_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:textColor="@color/Grey"
+                android:textSize="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:text="@string/seperator"
+                android:textColor="@color/Grey"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@id/total_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:textColor="@color/Grey"
+                android:textSize="12dp" />
+
+            <ImageButton
+                android:id="@id/id_rewind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_selector"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/rewind"/>
+
+            <ImageButton
+                android:id="@id/id_play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/button_selector"
+                android:contentDescription="@string/app_name"/>
+
+            <ImageButton
+                android:id="@id/id_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/button_selector"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/fastforward"/>
+
+            <TextView
+                android:id="@id/songTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:gravity="right"
+                android:textColor="@color/Grey"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal" >
+
+            <SeekBar
+                android:id="@id/songProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="50dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/button_selector"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/repeatalways" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+	
+    <LinearLayout
+        style="@style/HomeMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal">
+
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/surah_list"
+            android:src="@drawable/surah"
+            android:onClick="surahList"
+            android:background="@drawable/button_selector" />
+		<ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/surah_list"
+            android:src="@drawable/recite1"
+            android:onClick="recite"
+            android:background="@drawable/button_selector" />
+		<ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/surah_list"
+            android:src="@drawable/search"
+            android:background="@drawable/button_selector"
+            android:onClick="search" />
+
+		<ImageButton
+		    style="@style/TitleBarAction"
+		    android:background="@drawable/button_selector"
+		    android:contentDescription="@string/surah_list"
+		    android:onClick="scroll_down"
+		    android:src="@drawable/scrolldown" />
+
+		<ImageButton
+		    style="@style/TitleBarAction"
+		    android:background="@drawable/button_selector"
+		    android:contentDescription="@string/surah_list"
+		    android:onClick="scroll_up"
+		    android:src="@drawable/scrollup" />
+
+		<ImageButton style="@style/TitleBarAction"
+		    android:contentDescription="@string/book_mark"
+		    android:src="@drawable/bookmark"
+		    android:onClick="bookMark"
+		    android:background="@drawable/button_selector" />
+		    
+		<ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/surah_list"
+            android:src="@drawable/settings"
+            android:onClick="settings"
+            android:background="@drawable/button_selector" />
+	</LinearLayout>
+</RelativeLayout>

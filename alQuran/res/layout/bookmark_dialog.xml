@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/search_header"
+    android:gravity="center_vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/id_AyatsNo"
+        android:text="@string/bookmarks"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="15dp"
+        android:gravity="center_horizontal" android:layout_marginTop="35dp" 
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@id/bookmark_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@id/id_AyatsNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#ffffff"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@id/dialog_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:hint="@string/bookmark_hint"
+        android:textSize="18sp" >
+    </EditText>
+
+    <Button
+        android:id="@id/dialog_btn_cancel"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/search_button_selector"
+        android:text="@string/cancel"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@id/dialog_btn_add"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/search_button_selector"
+        android:text="@string/add"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="title_container" type="id"/>
+    <item name="home_menu_container" type="id"/>
+    <item name="home_container" type="id"/>
+    <item name="title_logo" type="id"/>
+    <item name="title_text" type="id"/>
+    <item name="bookmark_title" type="id"/>
+    <item name="bookmark_list_title" type="id"/>
+    <item name="dialog_bookmarkText" type="id"/>
+    <item name="dialog_btn_add" type="id"/>
+    <item name="dialog_btn_cancel" type="id"/>
+    <item name="dialog_editText" type="id"/>
+    <item name="dialog_title" type="id"/>
+    <item name="dialog_discard_confirm" type="id"/>
+    <item name="dialog_moderator" type="id"/>
+    <item name="dialog_wave" type="id"/>
+    <item name="blocks_ruler" type="id"/>
+    <item name="blocks_now" type="id"/>
+    <item name="id_SurahList" type="id"/>
+    <item name="id_JuzList" type="id"/>
+    <item name="id_SurahEnglish" type="id"/>
+    <item name="id_SurahArabic" type="id"/>
+    <item name="id_Verses" type="id"/>
+    <item name="id_JuzNo" type="id"/>
+    <item name="id_SurahNo" type="id"/>
+    <item name="id_AyatsNo" type="id"/>
+    <item name="id_OriginEnglish" type="id"/>
+    <item name="id_play_pause" type="id"/>
+    <item name="id_rewind" type="id"/>
+    <item name="id_forward" type="id"/>
+    <item name="id_matn" type="id"/>
+    <item name="current_duration" type="id"/>
+    <item name="total_duration" type="id"/>
+    <item name="songProgressBar" type="id"/>
+    <item name="songTitle" type="id"/>
+    <item name="popupMenu" type="id"/>
+    <item name="mediaPlayer" type="id"/>
+    
+</resources>

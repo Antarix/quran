@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        style="@style/SearchTitleBar"
+        android:gravity="center_vertical" >
+
+        <Button
+            style="@style/ButtonText"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/search_button_selector"
+            android:onClick="gotoSettings"
+            android:text="@string/menu_settings" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search"
+            android:text="@string/manage_files"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:fadingEdge="none"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setting_background"
+            android:orientation="vertical"
+            android:paddingBottom="13dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/recitation_for_saud_alshuraim"
+                android:textColor="#4C566C"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_curve_layout"
+                    android:onClick="deleteAllSurah"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/delete_all"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_top"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/download_all"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_bottom"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/update_timing"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/tap_to_download"
+                android:textColor="#4C566C"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/download_recitation_file"
+                android:textColor="#4C566C"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:background="@drawable/border_top"
+                android:gravity="center_vertical"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_1"
+                    style="@style/surahNoText"
+                    android:text="Surah No 1"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_2"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_2"
+                    style="@style/surahNoText"
+                    android:text="Surah No 2"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_3"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_3"
+                    style="@style/surahNoText"
+                    android:text="Surah No 3"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_4"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_4"
+                    style="@style/surahNoText"
+                    android:text="Surah No 4"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_5"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_5"
+                    style="@style/surahNoText"
+                    android:text="Surah No 5"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_6"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_6"
+                    style="@style/surahNoText"
+                    android:text="Surah No 6"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_7"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_7"
+                    style="@style/surahNoText"
+                    android:text="Surah No 7"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_8"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_8"
+                    style="@style/surahNoText"
+                    android:text="Surah No 8"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_9"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_9"
+                    style="@style/surahNoText"
+                    android:text="Surah No 9"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_10"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_10"
+                    style="@style/surahNoText"
+                    android:text="Surah No 10"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_11"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_11"
+                    style="@style/surahNoText"
+                    android:text="Surah No 11"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_12"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_12"
+                    style="@style/surahNoText"
+                    android:text="Surah No 12"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_13"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_13"
+                    style="@style/surahNoText"
+                    android:text="Surah No 13"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_14"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_14"
+                    style="@style/surahNoText"
+                    android:text="Surah No 14"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_15"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_15"
+                    style="@style/surahNoText"
+                    android:text="Surah No 15"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_16"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_16"
+                    style="@style/surahNoText"
+                    android:text="Surah No 16"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_17"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_17"
+                    style="@style/surahNoText"
+                    android:text="Surah No 17"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_18"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_18"
+                    style="@style/surahNoText"
+                    android:text="Surah No 18"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_19"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_19"
+                    style="@style/surahNoText"
+                    android:text="Surah No 19"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_20"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_20"
+                    style="@style/surahNoText"
+                    android:text="Surah No 20"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_21"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_21"
+                    style="@style/surahNoText"
+                    android:text="Surah No 21"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_22"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_22"
+                    style="@style/surahNoText"
+                    android:text="Surah No 22"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_23"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_23"
+                    style="@style/surahNoText"
+                    android:text="Surah No 23"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_24"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_24"
+                    style="@style/surahNoText"
+                    android:text="Surah No 24"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_25"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_25"
+                    style="@style/surahNoText"
+                    android:text="Surah No 25"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_26"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_26"
+                    style="@style/surahNoText"
+                    android:text="Surah No 26"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_27"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_27"
+                    style="@style/surahNoText"
+                    android:text="Surah No 27"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_28"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_28"
+                    style="@style/surahNoText"
+                    android:text="Surah No 28"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_29"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_29"
+                    style="@style/surahNoText"
+                    android:text="Surah No 29"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_30"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_30"
+                    style="@style/surahNoText"
+                    android:text="Surah No 30"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_31"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_31"
+                    style="@style/surahNoText"
+                    android:text="Surah No 31"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_32"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah"
+                tools:ignore="TooManyViews" >
+
+                <TextView
+                    android:id="@+id/SurahNo_32"
+                    style="@style/surahNoText"
+                    android:text="Surah No 32"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_33"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_33"
+                    style="@style/surahNoText"
+                    android:text="Surah No 33"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_34"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_34"
+                    style="@style/surahNoText"
+                    android:text="Surah No 34"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_35"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_35"
+                    style="@style/surahNoText"
+                    android:text="Surah No 35"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_36"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_36"
+                    style="@style/surahNoText"
+                    android:text="Surah No 36"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_37"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_37"
+                    style="@style/surahNoText"
+                    android:text="Surah No 37"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_38"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_38"
+                    style="@style/surahNoText"
+                    android:text="Surah No 38"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_39"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_39"
+                    style="@style/surahNoText"
+                    android:text="Surah No 39"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_40"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_40"
+                    style="@style/surahNoText"
+                    android:text="Surah No 40"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_41"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_41"
+                    style="@style/surahNoText"
+                    android:text="Surah No 41"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_42"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_42"
+                    style="@style/surahNoText"
+                    android:text="Surah No 42"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_43"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_43"
+                    style="@style/surahNoText"
+                    android:text="Surah No 43"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_44"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_44"
+                    style="@style/surahNoText"
+                    android:text="Surah No 44"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_45"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_45"
+                    style="@style/surahNoText"
+                    android:text="Surah No 45"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_46"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_46"
+                    style="@style/surahNoText"
+                    android:text="Surah No 46"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_47"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_47"
+                    style="@style/surahNoText"
+                    android:text="Surah No 47"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_48"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_48"
+                    style="@style/surahNoText"
+                    android:text="Surah No 48"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_49"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_49"
+                    style="@style/surahNoText"
+                    android:text="Surah No 49"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_50"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_50"
+                    style="@style/surahNoText"
+                    android:text="Surah No 50"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_51"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_51"
+                    style="@style/surahNoText"
+                    android:text="Surah No 51"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_52"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_52"
+                    style="@style/surahNoText"
+                    android:text="Surah No 52"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_53"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_53"
+                    style="@style/surahNoText"
+                    android:text="Surah No 53"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_54"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_54"
+                    style="@style/surahNoText"
+                    android:text="Surah No 54"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_55"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_55"
+                    style="@style/surahNoText"
+                    android:text="Surah No 55"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_56"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_56"
+                    style="@style/surahNoText"
+                    android:text="Surah No 56"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_57"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_57"
+                    style="@style/surahNoText"
+                    android:text="Surah No 57"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_58"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_58"
+                    style="@style/surahNoText"
+                    android:text="Surah No 58"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_59"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_59"
+                    style="@style/surahNoText"
+                    android:text="Surah No 59"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_60"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_60"
+                    style="@style/surahNoText"
+                    android:text="Surah No 60"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_61"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_61"
+                    style="@style/surahNoText"
+                    android:text="Surah No 61"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_62"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_62"
+                    style="@style/surahNoText"
+                    android:text="Surah No 62"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_63"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_63"
+                    style="@style/surahNoText"
+                    android:text="Surah No 63"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_64"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_64"
+                    style="@style/surahNoText"
+                    android:text="Surah No 64"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_65"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_65"
+                    style="@style/surahNoText"
+                    android:text="Surah No 65"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_66"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_66"
+                    style="@style/surahNoText"
+                    android:text="Surah No 66"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_67"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_67"
+                    style="@style/surahNoText"
+                    android:text="Surah No 67"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_68"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_68"
+                    style="@style/surahNoText"
+                    android:text="Surah No 68"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_69"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_69"
+                    style="@style/surahNoText"
+                    android:text="Surah No 69"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_70"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_70"
+                    style="@style/surahNoText"
+                    android:text="Surah No 70"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_71"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_71"
+                    style="@style/surahNoText"
+                    android:text="Surah No 71"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_72"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_72"
+                    style="@style/surahNoText"
+                    android:text="Surah No 72"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_73"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_73"
+                    style="@style/surahNoText"
+                    android:text="Surah No 73"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_74"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_74"
+                    style="@style/surahNoText"
+                    android:text="Surah No 74"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_75"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_75"
+                    style="@style/surahNoText"
+                    android:text="Surah No 75"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_76"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_76"
+                    style="@style/surahNoText"
+                    android:text="Surah No 76"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_77"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_77"
+                    style="@style/surahNoText"
+                    android:text="Surah No 77"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_78"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_78"
+                    style="@style/surahNoText"
+                    android:text="Surah No 78"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_79"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_79"
+                    style="@style/surahNoText"
+                    android:text="Surah No 79"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_80"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_80"
+                    style="@style/surahNoText"
+                    android:text="Surah No 80"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_81"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_81"
+                    style="@style/surahNoText"
+                    android:text="Surah No 81"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_82"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_82"
+                    style="@style/surahNoText"
+                    android:text="Surah No 82"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_83"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_83"
+                    style="@style/surahNoText"
+                    android:text="Surah No 83"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_84"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_84"
+                    style="@style/surahNoText"
+                    android:text="Surah No 84"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_85"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_85"
+                    style="@style/surahNoText"
+                    android:text="Surah No 85"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_86"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_86"
+                    style="@style/surahNoText"
+                    android:text="Surah No 86"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_87"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_87"
+                    style="@style/surahNoText"
+                    android:text="Surah No 87"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_88"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_88"
+                    style="@style/surahNoText"
+                    android:text="Surah No 88"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_89"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_89"
+                    style="@style/surahNoText"
+                    android:text="Surah No 89"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_90"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_90"
+                    style="@style/surahNoText"
+                    android:text="Surah No 90"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_91"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_91"
+                    style="@style/surahNoText"
+                    android:text="Surah No 91"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_92"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_92"
+                    style="@style/surahNoText"
+                    android:text="Surah No 92"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_93"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_93"
+                    style="@style/surahNoText"
+                    android:text="Surah No 93"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_94"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_94"
+                    style="@style/surahNoText"
+                    android:text="Surah No 94"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_95"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_95"
+                    style="@style/surahNoText"
+                    android:text="Surah No 95"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_96"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_96"
+                    style="@style/surahNoText"
+                    android:text="Surah No 96"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_97"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_97"
+                    style="@style/surahNoText"
+                    android:text="Surah No 97"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_98"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_98"
+                    style="@style/surahNoText"
+                    android:text="Surah No 98"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_99"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_99"
+                    style="@style/surahNoText"
+                    android:text="Surah No 99"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_100"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_100"
+                    style="@style/surahNoText"
+                    android:text="Surah No 100"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_101"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_101"
+                    style="@style/surahNoText"
+                    android:text="Surah No 101"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_102"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_102"
+                    style="@style/surahNoText"
+                    android:text="Surah No 102"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_103"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_103"
+                    style="@style/surahNoText"
+                    android:text="Surah No 103"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_104"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_104"
+                    style="@style/surahNoText"
+                    android:text="Surah No 104"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_105"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_105"
+                    style="@style/surahNoText"
+                    android:text="Surah No 105"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_106"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_106"
+                    style="@style/surahNoText"
+                    android:text="Surah No 106"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_107"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_107"
+                    style="@style/surahNoText"
+                    android:text="Surah No 107"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_108"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_108"
+                    style="@style/surahNoText"
+                    android:text="Surah No 108"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_109"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_109"
+                    style="@style/surahNoText"
+                    android:text="Surah No 109"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_110"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_110"
+                    style="@style/surahNoText"
+                    android:text="Surah No 110"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_111"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_111"
+                    style="@style/surahNoText"
+                    android:text="Surah No 111"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_112"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_112"
+                    style="@style/surahNoText"
+                    android:text="Surah No 112"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_113"
+                style="@style/downloadListLayout"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_113"
+                    style="@style/surahNoText"
+                    android:text="Surah No 113"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_114"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:background="@drawable/border_bottom"
+                android:onClick="downloadSurah" >
+
+                <TextView
+                    android:id="@+id/SurahNo_114"
+                    style="@style/surahNoText"
+                    android:text="Surah No 114"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    style="@style/deleteButton"
+                    android:onClick="deleteSurah"
+                    android:text="@string/delete" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

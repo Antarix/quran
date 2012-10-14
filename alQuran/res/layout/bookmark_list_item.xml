@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Definig a container for you List Item-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bookmark_content"
+    android:gravity="right"
+    android:background="#ffffff" >
+
+    <TextView
+			    android:id="@id/id_SurahArabic"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textColor="#000000"
+			    android:textSize="16sp"
+			    android:textStyle="bold"
+			    android:layout_marginRight="63dp"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignParentTop="true"/>
+    <TextView
+			    android:id="@id/id_AyatsNo"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textColor="#000000"
+			    android:textSize="16sp"
+			    android:textStyle="bold"
+			    android:layout_marginRight="20dp"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignParentTop="true"/>
+    <TextView
+			    android:id="@+id/bookmark_id"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textColor="#000000"
+			    android:textSize="16sp"
+			    android:textStyle="bold"
+			    android:layout_marginRight="5dp"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignParentTop="true"/>
+    <TextView
+			    android:id="@id/bookmark_list_title"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textColor="#747474"
+			    android:textSize="12sp"
+			    android:text="@string/splashDescription"
+			    android:paddingBottom="2dp"
+			    android:layout_marginRight="5dp"
+			    android:layout_marginTop="23dp"
+			    android:layout_alignParentLeft="true"
+			 	/>
+
+</RelativeLayout>
