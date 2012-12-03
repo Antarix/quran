@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item>
+    <item android:state_enabled="false" android:state_focused="true">
         <shape android:shape="rectangle" >
-            <solid android:color="#FEECE0" />
+            <solid android:color="#FFFFFF" />
             <!-- border width and color -->
 
             <stroke
                 android:width="1dp"
-                android:color="#FFE6E6" />
+                android:color="#FFFFFF" />
+
+        </shape>
+    </item>
+
+     <item android:state_pressed="true">
+        <shape android:shape="rectangle" >
+            <solid android:color="#97DB35" />
+            <!-- border width and color -->
+
+            <stroke
+                android:width="1dp"
+                android:color="#97C135" />
+
+        </shape>
+    </item>
+    
+    <item android:state_focused="true">
+        <shape android:shape="rectangle" >
+            <solid android:color="#97DB35" />
+            <!-- border width and color -->
+
+            <stroke
+                android:width="1dp"
+                android:color="#97C135" />
 
         </shape>
     </item>

@@ -109,14 +109,11 @@ public class Manage extends Activity {
 			{
 				tv.setTextColor(Color.argb(255,0,171,0));
 				btnDelete.setVisibility(View.VISIBLE);
-				
 			}
 			else
 			{
 				btnDelete.setVisibility(View.GONE);
 			}
-			
-			
 		}
 		
 		idAray = null;
@@ -134,8 +131,6 @@ public class Manage extends Activity {
 				+ "/Surah/" + mp3File;
 		checkSurahMp3(url, mp3File);
 		tv.setTextColor(Color.argb(255,0,171,0));
-		// Toast.makeText(this,"Surah : " + String.valueOf(surahNo),
-		// Toast.LENGTH_SHORT).show();
 
 	}
 

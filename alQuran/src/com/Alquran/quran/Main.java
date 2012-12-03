@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,7 +28,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -41,6 +41,8 @@ import android.widget.Toast;
 
 import com.Alquran.quran.BO.Reader;
 import com.Alquran.quran.BO.Util;
+
+
 
 
 public class Main extends Activity implements OnCompletionListener,SeekBar.OnSeekBarChangeListener{
@@ -357,7 +359,9 @@ public void reciteAayat(View v)
 
 public String getThreeDigitNo(int number)
 {
-	return String.format("%03d", number);
+	
+	return String.format(Locale.getDefault(), "%03d", number);
+	
 }
 
 //User Defined Methods
@@ -487,11 +491,13 @@ public void scroll_up(View v)
     	listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
     	  @Override
-    	  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+    	  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     	    
     		cursorMainAdapter.setSelectedItem(position);
-    	    listview.setAdapter(cursorMainAdapter);
-    	    listview.setSelection(position);
+    		
+			
+    	    //listview.setAdapter(cursorMainAdapter);
+    	    //listview.setSelection(position);
     	    
     	    if(mediaPlayer.getVisibility() == View.VISIBLE)
     	    {
@@ -508,14 +514,8 @@ public void scroll_up(View v)
     	    	popupMenu.setVisibility(View.VISIBLE);
     	    	
     	    }
-    	    
-    	    
-    	    
-    	    
     	      
     	  }
-    	  
-    	  
     	  
     	});
     	
@@ -578,7 +578,7 @@ public void scroll_up(View v)
     	Intent myIntent = getIntent();
     	if (myIntent.hasExtra("SurahDetail"))
     	{
-    	SurahDetail= myIntent.getIntArrayExtra("SurahDetail");
+    	 //SurahDetail= myIntent.getIntArrayExtra("SurahDetail");
     	SurahNo=SurahDetail[0];
     	ayat_No=SurahDetail[1];
     	ayat_No_fromOtherActivity=SurahDetail[1];
@@ -1014,7 +1014,8 @@ public void scroll_up(View v)
     
     public class DownloadMP3File extends AsyncTask<String, Integer, String>
     {
-    	 @Override
+    	
+		@Override
     	    protected String doInBackground(String... sUrl) {
     		 
     		 try

@@ -54,22 +54,7 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
         tab.setTabListener(this);
         actionBar.addTab(tab);
         
-        //getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        //getSupportActionBar().setDisplayShowHomeEnabled(false);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
         
-        //ActionBar.Tab tab = getSupportActionBar().newTab();
-        //tab.setText(surah);
-        
-        //tab.setTabListener(this);
-        //getSupportActionBar().addTab(tab);
-        
-        
-        //ActionBar.Tab tab2 = getSupportActionBar().newTab();
-        //tab2.setText(juz);
-        //tab2.setTabListener(this);
-        
-        //getSupportActionBar().addTab(tab2);
                 
     }
 
@@ -105,6 +90,7 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
 
     @Override
     public void onTabReselected(Tab tab, FragmentTransaction transaction) {
+    	
     }
 
     
@@ -141,17 +127,14 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
     	  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
     	    
     	    Log.d(TAG, position+1 + "  Selected...");
-    	    int SurahDetail[] = {position+1,0};
+    	    int pos = position + 1;
+    	    int SurahDetail[] = {pos,0};
     	    //String SurahNo = String.valueOf(position + 1);
     	    Intent surahIntent = new Intent(SurahTabs.this, Main.class);
     	    surahIntent.putExtra("SurahDetail", SurahDetail);
     	    startActivity(surahIntent);
     	    finish();   
-    	    /* write you handling code like...
-    	    String st = "sdcard/";
-    	    File f = new File(st+o.toString());
-    	    // do whatever u want to do with 'f' File object
-    	    */  
+    	    
     	  }
     	});
     	
@@ -187,19 +170,16 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
     	  @Override
     	  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
     	    
-    	    Log.d(TAG, position+1 + "  Selected...");
-    	    int SurahDetail[] = {position+1,0};
+    	    Log.d(TAG, position + "  Selected...");
+    	    int pos = position + 1;
+    	    int SurahDetail[] = {pos,0};
     	    
     	    //String SurahNo = String.valueOf(position + 1);
     	    Intent surahIntent = new Intent(getApplicationContext(), Main.class);
     	    surahIntent.putExtra("SurahDetail", SurahDetail);
     	    startActivity(surahIntent);
     	    finish();
-    	    /* write you handling code like...
-    	    String st = "sdcard/";
-    	    File f = new File(st+o.toString());
-    	    // do whatever u want to do with 'f' File object
-    	    */  
+    	    
     	  }
     	});
 

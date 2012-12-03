@@ -16,7 +16,7 @@ public class Util{
 
  // public static final String font = "font/DroidSansArabic.ttf";
    
-	
+	public static int SurahDetail[] = {1,0};
 	public static boolean hasConnection(Context cont) {
 	    ConnectivityManager cm = (ConnectivityManager) cont.getApplicationContext().getSystemService(
 	        Context.CONNECTIVITY_SERVICE);
@@ -68,6 +68,7 @@ public class Util{
 	
 	
 	
+	@SuppressWarnings("resource")
 	public static boolean isFileExistsOnSD(String fileName)
 	{
 			
@@ -75,6 +76,7 @@ public class Util{
 			File myFile = new File(fileName);
 			FileInputStream fIn = new FileInputStream(myFile);
 			
+			@SuppressWarnings("unused")
 			BufferedReader myReader = new BufferedReader(
 					new InputStreamReader(fIn));
 			return true;	

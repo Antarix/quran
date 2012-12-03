@@ -17,14 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:gravity="top"
-            android:textSize="12dp"/>
+            android:textSize="12sp"/>
         <TextView
             android:id="@id/id_SurahArabic"
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:layout_marginTop="2dp"
             android:gravity="bottom"
-            android:textSize="12dp"/>
+            android:textSize="12sp"/>
         
     </LinearLayout>
 	
@@ -49,7 +49,7 @@
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:layout_gravity="center"
-			    android:textSize="20dp"/>
+			    android:textSize="20sp"/>
 
 		</LinearLayout>
 
@@ -58,6 +58,7 @@
 		    android:layout_width="match_parent"
 		    android:layout_height="match_parent"
 		    android:layout_gravity="right"
+		    android:listSelector="@drawable/background_dark_blue"
 		    android:background="@color/background1"
 		    android:cacheColorHint="@android:color/transparent"
 		    android:divider="@color/Grey"
@@ -158,7 +159,7 @@
                 android:gravity="center"
                 android:text="@string/playerTitle"
                 android:textColor="@color/Grey"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -190,7 +191,7 @@
                 android:layout_gravity="center_vertical"
                 android:gravity="left"
                 android:textColor="@color/Grey"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -198,7 +199,7 @@
                 android:gravity="left"
                 android:text="@string/seperator"
                 android:textColor="@color/Grey"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
             <TextView
                 android:id="@id/total_duration"
                 android:layout_width="wrap_content"
@@ -206,7 +207,7 @@
                 android:layout_gravity="center_vertical"
                 android:gravity="left"
                 android:textColor="@color/Grey"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
             <ImageButton
                 android:id="@id/id_rewind"
@@ -242,7 +243,7 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="right"
                 android:textColor="@color/Grey"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
