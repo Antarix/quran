@@ -1,6 +1,8 @@
 package com.Alquran.quran;
 
 
+import com.Alquran.quran.BO.Util;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -178,13 +180,16 @@ public class Bookmark extends Activity {
 	    	  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 	    		  
 	    		  cursorAdapter.setSelectedItem(position);
-	    		  int SurahDetail[] = { tempCursor.getInt(4),tempCursor.getInt(5) };
-	    		  Log.e("data", SurahDetail[0]+"   "+SurahDetail[1]);
-		    		Intent myIntent = new Intent(getApplicationContext(), Main.class);
-		    		 
-		    	    myIntent.putExtra("SurahDetail",SurahDetail);
+	    		  	//int SurahDetail[] = { tempCursor.getInt(4),tempCursor.getInt(5) };
+	    		  	//Log.e("data", SurahDetail[0]+"   "+SurahDetail[1]);
+	    		  	
+	    		  	Util.surahDetail[0] = tempCursor.getInt(4);
+	    		  	Util.surahDetail[1] = tempCursor.getInt(5);
+		    		//Intent myIntent = new Intent(getApplicationContext(), Main.class);
+		    		
+		    	    //myIntent.putExtra("SurahDetail",SurahDetail);
 		    	    overridePendingTransition(R.anim.hold_y, R.anim.slide_down);
-		    	    startActivity(myIntent);
+		    	    //startActivity(myIntent);
 		    	    finish();
 		    	    if(bookmark_Db != null)
 		    	    {

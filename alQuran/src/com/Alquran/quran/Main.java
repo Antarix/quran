@@ -73,6 +73,7 @@ public class Main extends Activity implements OnCompletionListener,SeekBar.OnSee
     private ImageButton btnForward;
     private ImageButton btnBackward;
     private SeekBar songProgressBar;
+    File mp3FileDownloaded;
     
     
     
@@ -437,10 +438,16 @@ public void scroll_down(View v)
 	
 	if(cursorMainAdapter.getSelectedPosition()<cursorMainAdapter.getCount())
 	{
+		int max = cursorMainAdapter.getCount(); 
+		
 	    int pos=cursorMainAdapter.getSelectedPosition()+1;
-		cursorMainAdapter.setSelectedItem(pos);
-		listview.setAdapter(cursorMainAdapter);
-		listview.setSelection(pos);
+	    if(pos < max){
+	    	cursorMainAdapter.setSelectedItem(pos);
+			listview.setAdapter(cursorMainAdapter);
+			listview.setSelection(pos);
+	    }
+		
+		
 	}
 
 }
@@ -472,8 +479,13 @@ public void scroll_up(View v)
 		pd.setMessage("Downloading data from the server for the first time");
 		pd.setIndeterminate(false);
 		pd.setMax(100);
-		
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		//pd.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+		  //  @Override
+		    //public void onClick(DialogInterface dialog, int which) {
+		      //  dialog.dismiss();
+		    //}
+		//});
 		DownloadFile downloadFile = new DownloadFile();
 		//downloadFile.execute("http://b33h.com/Quran/db/quran_Db.db");
 		//downloadFile.execute("http://205.196.122.201/heazzinf9ang/krphna0ac0z639b/quran_Db.db");
@@ -563,25 +575,43 @@ public void scroll_up(View v)
         db.close();
         dbHelper.close();
         Log.d(TAG,"Database connection closed");
-        if (ayat_No!=0)moveCursortoAyat();
+        if (ayat_No!=0){
+        	moveCursortoAyat();
+        }
     }
-    public void moveCursortoAyat()
-    {
-    		if(ayat_No_fromOtherActivity!=ayat_No)Log.e("my error","it seems different");
+    public void moveCursortoAyat(){
+    	
+    	if(ayat_No_fromOtherActivity!=ayat_No)Log.e("my error","it seems different");
     		cursorMainAdapter.setSelectedItem(ayat_No-1);
     		listview.setAdapter(cursorMainAdapter);
     		listview.setSelection(ayat_No-1);
     		
     }
-    public void getSurahDetails()
-    {
-    	Intent myIntent = getIntent();
-    	if (myIntent.hasExtra("SurahDetail"))
-    	{
+    
+    public void getSurahDetails(){
+    	
+    	SurahNo = Util.surahDetail[0];
+    	ayat_No = Util.surahDetail[1];
+    	//Intent myIntent = getIntent();
+    	//if (myIntent.hasExtra("SurahDetail")){
     	 //SurahDetail= myIntent.getIntArrayExtra("SurahDetail");
-    	SurahNo=SurahDetail[0];
-    	ayat_No=SurahDetail[1];
-    	ayat_No_fromOtherActivity=SurahDetail[1];
+	    	//SurahNo=SurahDetail[0];
+	    	//ayat_No=SurahDetail[1];
+	    	//ayat_No_fromOtherActivity=SurahDetail[1];
+    	//}
+    	
+    	//if(SurahNo ==0 ){
+    		//SurahNo = 1;
+    	//}
+    }
+    
+    public void getSurahDetails1(){
+    	Intent myIntent = getIntent();
+    	if (myIntent.hasExtra("SurahDetail")){
+    	 SurahDetail= myIntent.getIntArrayExtra("SurahDetail");
+	    	SurahNo=SurahDetail[0];
+	    	ayat_No=SurahDetail[1];
+	    	ayat_No_fromOtherActivity=SurahDetail[1];
     	}
     	if(SurahNo ==0 )
     	{
@@ -784,10 +814,19 @@ public void scroll_up(View v)
         	        	        	        	
         	        	pd = new ProgressDialog(Main.this);
         	        	pd.setMessage("Downloading Aayat " + file + " from server");
+        	        	
         	        	pd.setIndeterminate(false);
         	        	pd.setMax(100);
         	        	pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                		DownloadMP3File downloadMP3File = new DownloadMP3File();
+        	        	
+        	        	pd.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+        	        		@Override
+	        	  		    public void onClick(DialogInterface dialog, int which) {
+        	        			Util.isDownloadCanceled = true;
+	        	  		        dialog.dismiss();
+	        	  		    }
+        	        	});
+        	        	DownloadMP3File downloadMP3File = new DownloadMP3File();
                 		downloadMP3File.execute(url,dir,file);
                 		break;
         
@@ -905,8 +944,18 @@ public void scroll_up(View v)
 		        	        	String dir = "/alQuranData/Reader" + reader.getSelectedReaderId() + "/Surah";
 		                		//pd = ProgressDialog.show(this, "Downloading data from the server for the first time", "Please wait...");
 		        	        	pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		                		DownloadMP3File downloadMP3File = new DownloadMP3File();
-		                		downloadMP3File.execute(DownloadURL,dir,Filename);
+		        	        	
+		        	        	pd.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+		        	        		@Override
+			        	  		    public void onClick(DialogInterface dialog, int which) {
+		        	        			Util.isDownloadCanceled = true;
+		        	        			dialog.dismiss();
+			        	  		    }
+		        	        	});
+		        	        	
+		        	        	DownloadMP3File downloadMP3File = new DownloadMP3File();
+		        	        	downloadMP3File.execute(DownloadURL,dir,Filename);
+		                		
 		                		
 		                		//DownloadFile downloadFile = new DownloadFile();
 		                		//downloadFile.execute(DownloadURL);
@@ -1015,12 +1064,13 @@ public void scroll_up(View v)
     public class DownloadMP3File extends AsyncTask<String, Integer, String>
     {
     	
+		@SuppressWarnings("resource")
 		@Override
     	    protected String doInBackground(String... sUrl) {
     		 
     		 try
     		 {
-    		 
+    			 
              	 URL url = new URL(sUrl[0]);
     		        //create the new connection
     		        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -1038,10 +1088,10 @@ public void scroll_up(View v)
     		        
     		        //create a new file, specifying the path, and the filename
     		        //which we want to save the file as.
-    		        File file = new File(SDCardRoot,sUrl[2]);
-    		        file.canRead();
+    		        mp3FileDownloaded = new File(SDCardRoot,sUrl[2]);
+    		        mp3FileDownloaded.canRead();
     		        //this will be used to write the downloaded data into the file we created
-    		        FileOutputStream fileOutput = new FileOutputStream(file);
+    		        FileOutputStream mp3FileOutput = new FileOutputStream(mp3FileDownloaded);
 
     		        //this will be used in reading the data from the internet
     		        InputStream inputStream = urlConnection.getInputStream();
@@ -1057,8 +1107,12 @@ public void scroll_up(View v)
 
     		        //now, read through the input buffer and write the contents to the file
     		        while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
+	    		        	if(Util.isDownloadCanceled) {
+	    	    				 Util.isDownloadCanceled = false;
+	    	    				 return "inComplete";
+	    	    			 }
     		                //add the data in the buffer to the file in the file output stream (the file on the sd card
-    		                fileOutput.write(buffer, 0, bufferLength);
+	    		        	mp3FileOutput.write(buffer, 0, bufferLength);
     		                //add up the size so we know how much is downloaded
     		                downloadedSize += bufferLength;
     		                //this is where you would do something to report the prgress, like this maybe
@@ -1067,7 +1121,7 @@ public void scroll_up(View v)
 
     		        }
     		        //close the output stream when done
-    		        fileOutput.close();
+    		        mp3FileOutput.close();
     		        Log.d("somethig", "Download Completed");
 
     		//catch some possible errors...
@@ -1102,9 +1156,18 @@ public void scroll_up(View v)
     	    	try{
     	   	    	if(pd.isShowing())pd.dismiss();
     	   	    	pd=null;
-    	   	    	}catch(Exception e){}
+    	   	    }catch(Exception e){}
 
-    	    	PlayMedia(path);
+    	    	if(result != "inComplete"){
+    	    		PlayMedia(path);
+    	    	}
+    	    	else{
+    	    		boolean deleted = mp3FileDownloaded.delete();
+    	    		if(deleted){
+    	    			Toast.makeText(getApplicationContext(), "Download Canceled!", Toast.LENGTH_LONG).show();
+    	    		}
+    	    	}
+    	    	
     	    	
     	    }
 

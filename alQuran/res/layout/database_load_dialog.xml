@@ -15,7 +15,8 @@
 
         <ProgressBar
             android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleLarge"
+            
+            style="@style/ProgressBarAppTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
@@ -23,3 +24,4 @@
             android:layout_marginTop="29dp" />
 
     </RelativeLayout>
+<!-- style="?android:attr/progressBarStyleLarge" -->

@@ -1,5 +1,4 @@
 package com.Alquran.quran;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
@@ -11,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-
+import com.Alquran.quran.BO.Util;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockActivity;
@@ -128,11 +127,14 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
     	    
     	    Log.d(TAG, position+1 + "  Selected...");
     	    int pos = position + 1;
-    	    int SurahDetail[] = {pos,0};
-    	    //String SurahNo = String.valueOf(position + 1);
-    	    Intent surahIntent = new Intent(SurahTabs.this, Main.class);
-    	    surahIntent.putExtra("SurahDetail", SurahDetail);
-    	    startActivity(surahIntent);
+    	    //int SurahDetail[] = {pos,0};
+    	    
+    	    Util.surahDetail[0] = pos;
+    	    Util.surahDetail[1] = 0;
+    	    
+    	    //Intent surahIntent = new Intent(SurahTabs.this, Main.class);
+    	    //surahIntent.putExtra("SurahDetail", SurahDetail);
+    	    //startActivity(surahIntent);
     	    finish();   
     	    
     	  }
@@ -172,12 +174,14 @@ public class SurahTabs extends SherlockActivity implements ActionBar.TabListener
     	    
     	    Log.d(TAG, position + "  Selected...");
     	    int pos = position + 1;
-    	    int SurahDetail[] = {pos,0};
+    	    //int SurahDetail[] = {pos,0};
     	    
-    	    //String SurahNo = String.valueOf(position + 1);
-    	    Intent surahIntent = new Intent(getApplicationContext(), Main.class);
-    	    surahIntent.putExtra("SurahDetail", SurahDetail);
-    	    startActivity(surahIntent);
+    	   
+    	   // Intent surahIntent = new Intent(getApplicationContext(), Main.class);
+    	    //surahIntent.putExtra("SurahDetail", SurahDetail);
+    	    //startActivity(surahIntent);
+    	    Util.surahDetail[0] = pos;
+    	    Util.surahDetail[1] = 0;
     	    finish();
     	    
     	  }

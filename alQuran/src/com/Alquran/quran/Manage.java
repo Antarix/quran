@@ -7,9 +7,11 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -31,7 +33,7 @@ public class Manage extends Activity {
 	private ProgressDialog pd;
 	private SQLiteDatabase manage_Db;
 	private DbHelper dbHelper = null;
-	
+	File mp3FileDownloaded;
 	// private DownloadSurahAdapter cursorAdapter;
 	private Reader reader;
 	private String path;
@@ -176,6 +178,14 @@ public class Manage extends Activity {
 			pd.setIndeterminate(false);
 			pd.setMax(100);
 			pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			pd.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+        		@Override
+	  		    public void onClick(DialogInterface dialog, int which) {
+        			Util.isDownloadCanceled = true;
+        			dialog.dismiss();
+	  		    }
+        	});
+        	
 			DownloadMP3File downloadMP3File = new DownloadMP3File();
 			downloadMP3File.execute(url, dir, file);
 		} else {
@@ -187,7 +197,6 @@ public class Manage extends Activity {
 	
 	public void deleteSurah(View v)
 	{
-		
 		Toast.makeText(getApplicationContext(), "Delete Surah called", Toast.LENGTH_LONG).show();
 	}
 
@@ -237,7 +246,8 @@ public class Manage extends Activity {
 	}
 
 	public String getThreeDigitNo(int number) {
-		return String.format("%03d", number);
+		return String.format(Locale.getDefault(), "%03d",number);
+		
 	}
 
 	public void createDirectories(String url) {
@@ -261,6 +271,7 @@ public class Manage extends Activity {
 	}
 
 	public class DownloadMP3File extends AsyncTask<String, Integer, String> {
+		@SuppressWarnings("resource")
 		@Override
 		protected String doInBackground(String... sUrl) {
 
@@ -286,11 +297,11 @@ public class Manage extends Activity {
 
 				// create a new file, specifying the path, and the filename
 				// which we want to save the file as.
-				File file = new File(SDCardRoot, sUrl[2]);
-				file.canRead();
+				mp3FileDownloaded = new File(SDCardRoot, sUrl[2]);
+				mp3FileDownloaded.canRead();
 				// this will be used to write the downloaded data into the file
 				// we created
-				FileOutputStream fileOutput = new FileOutputStream(file);
+				FileOutputStream fileOutput = new FileOutputStream(mp3FileDownloaded);
 
 				// this will be used in reading the data from the internet
 				InputStream inputStream = urlConnection.getInputStream();
@@ -308,6 +319,10 @@ public class Manage extends Activity {
 				// now, read through the input buffer and write the contents to
 				// the file
 				while ((bufferLength = inputStream.read(buffer)) > 0) {
+					if(Util.isDownloadCanceled) {
+	    				 Util.isDownloadCanceled = false;
+	    				 return "inComplete";
+	    			 }
 					// add the data in the buffer to the file in the file output
 					// stream (the file on the sd card
 					fileOutput.write(buffer, 0, bufferLength);
@@ -351,8 +366,20 @@ public class Manage extends Activity {
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
+			try{
+	   	    	if(pd.isShowing())pd.dismiss();
+	   	    	pd=null;
+	   	    }catch(Exception e){
+	   	    	e.printStackTrace();
+	   	    }
 
-			pd.dismiss();
+	    	if(result == "inComplete"){
+	    		boolean deleted = mp3FileDownloaded.delete();
+	    		if(deleted){
+	    			Toast.makeText(getApplicationContext(), "Download Canceled!", Toast.LENGTH_LONG).show();
+	    		}
+	    	}
+	    	
 
 		}
 

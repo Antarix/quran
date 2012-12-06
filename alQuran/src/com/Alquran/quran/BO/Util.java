@@ -16,7 +16,8 @@ public class Util{
 
  // public static final String font = "font/DroidSansArabic.ttf";
    
-	public static int SurahDetail[] = {1,0};
+	public static int surahDetail[] = {1,0};
+	public static boolean isDownloadCanceled = false;
 	public static boolean hasConnection(Context cont) {
 	    ConnectivityManager cm = (ConnectivityManager) cont.getApplicationContext().getSystemService(
 	        Context.CONNECTIVITY_SERVICE);
@@ -58,16 +59,9 @@ public class Util{
     	{
     		return false;
     	}
-    	
     
     }
- 
-	
-	
-	
-	
-	
-	
+ 	
 	@SuppressWarnings("resource")
 	public static boolean isFileExistsOnSD(String fileName)
 	{

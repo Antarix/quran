@@ -58,11 +58,12 @@
 		    android:layout_width="match_parent"
 		    android:layout_height="match_parent"
 		    android:layout_gravity="right"
-		    android:listSelector="@drawable/background_dark_blue"
 		    android:background="@color/background1"
 		    android:cacheColorHint="@android:color/transparent"
 		    android:divider="@color/Grey"
-		    android:dividerHeight="1dip" >
+		    android:dividerHeight="1dip"
+		    android:listSelector="@drawable/background_dark_blue"
+		    tools:listitem="@layout/mainlvtextstyle" >
 			
 		</ListView>
     
@@ -253,6 +254,7 @@
 
             <SeekBar
                 android:id="@id/songProgressBar"
+                style="@style/SeekBarAppTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"

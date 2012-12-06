@@ -2,7 +2,6 @@ package com.Alquran.quran;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
@@ -17,6 +16,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+
+import com.Alquran.quran.BO.Util;
 
 
 public class Search extends Activity 
@@ -101,11 +102,16 @@ public class Search extends Activity
 	    	  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 	    	    
 	    		cursor.moveToPosition(position);
-	    		int SurahDetail[] = { cursor.getInt(4),cursor.getInt(5) }; 
-	    		Intent myIntent = new Intent(getApplicationContext(), Main.class);
+	    		//int SurahDetail[] = { cursor.getInt(4),cursor.getInt(5) };
+	    		
+	    		Util.surahDetail[0] = cursor.getInt(4);
+	    	    Util.surahDetail[1] = cursor.getInt(5);
+	    		//Intent myIntent = new Intent(getApplicationContext(), Main.class);
 	    		 
-	    	    myIntent.putExtra("SurahDetail",SurahDetail);
-	    	    startActivity(myIntent);
+	    	    //myIntent.putExtra("SurahDetail",SurahDetail);
+	    	    //startActivity(myIntent);
+	    	
+	    	    onPause();
 	    	    //finish();
 	    	  }
 	    	});
