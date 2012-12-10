@@ -63,6 +63,8 @@
     <string name="font_face">font/DroidSansArabic.ttf</string>
     
     <string name="select_reader">Select Reader</string>
+    <string name="surah">Surah</string>
+    <string name="ayah">Ayah</string>
     <string name="surahTab">Surah   سورة</string>
     <string name="juzTab">Juz   جزء </string>
     

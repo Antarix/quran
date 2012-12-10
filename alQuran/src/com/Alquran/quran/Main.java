@@ -75,8 +75,6 @@ public class Main extends Activity implements OnCompletionListener,SeekBar.OnSee
     private SeekBar songProgressBar;
     File mp3FileDownloaded;
     
-    
-    
 	//cursors
 	private MainSurahListAdapter cursorMainAdapter; 
 	private Cursor cursorMain;
@@ -537,8 +535,7 @@ public void scroll_up(View v)
     public void LoadList()
     {
     	if (!Util.checkDataBase())return;
-    	
-    	
+   	
     	font = Typeface.createFromAsset(getAssets(),mainContext.getResources().getString(R.string.font_face));
     	dbHelper = new DbHelper(mainContext);
     	db = dbHelper.getReadableDatabase();
@@ -557,7 +554,6 @@ public void scroll_up(View v)
     	juzNo.setText(cursorMainSurah.getString(2).toString());
     	surahArabic.setTypeface(font);
     	juzNo.setTypeface(font);
-    	
     	
     	cursorMain = getRecords(SurahNo);
         startManagingCursor(cursorMain);

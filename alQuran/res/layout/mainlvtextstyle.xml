@@ -1,31 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Definig a container for you List Item -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_list_content"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="right"
-    android:id="@+id/main_list_content" >
+    android:background="@android:color/transparent" >
 
     <!-- Defining where should text be placed. You set you text color here -->
 
-	<TextView
-	    android:id="@id/id_AyatsNo" 
-	    android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_margin="4dip"
-        android:paddingBottom="4dp"
-        android:gravity="center"
-        android:textSize="13dp"
-        android:background="@drawable/ic_braces"
-        android:textColor="#000000"
-        android:typeface="normal"  />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent" >
 
-    <TextView
-        android:id="@+id/list_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dip"
-        android:paddingBottom="4dp"
-        android:textColor="#000000" />
+        <LinearLayout
+            android:id="@+id/layout_juz"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/juzheader"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/id_Juz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_ayah"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_below="@+id/layout_juz" >
+
+            <TextView
+                android:id="@id/id_AyatsNo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="4dip"
+                android:background="@drawable/ayah_background"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/list_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/id_AyatsNo"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textColor="#000000" />
+        </RelativeLayout>
+    </RelativeLayout>
 
 </LinearLayout>

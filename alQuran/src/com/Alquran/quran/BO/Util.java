@@ -5,11 +5,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-import com.Alquran.quran.DbHelper;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import com.Alquran.quran.DbHelper;
 
 
 public class Util{
@@ -18,6 +18,7 @@ public class Util{
    
 	public static int surahDetail[] = {1,0};
 	public static boolean isDownloadCanceled = false;
+	
 	public static boolean hasConnection(Context cont) {
 	    ConnectivityManager cm = (ConnectivityManager) cont.getApplicationContext().getSystemService(
 	        Context.CONNECTIVITY_SERVICE);
